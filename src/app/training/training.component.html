@@ -1,0 +1,24 @@
+<h2 class="p-mt-6">Training</h2>
+<!-- If no data is available-->
+<div class="p-m-4 p-text-center" *ngIf="wordpairService.wordlist.length === 0">
+  <p>Es sind Keine Wörter in der Liste vorhanden </p>
+</div>
+
+<!-- Training Main part -->
+<div *ngIf="wordpairService.wordlist.length > 0">
+  <div>
+    <p>{{wordpairService.languages[knownLanguage]}}</p>
+    <h3>{{wordpair[knownLanguage]}}</h3>
+  </div>
+  {{wordpairService.languages[wordpairService.getUnknownLanguage(knownLanguage)]}}<br>
+  <div *ngIf="mistake" class="p-mt-4"><h4 class="danger-color">Falsch!</h4> Korrekt wäre: <h4>{{getUnknownWord()}}</h4></div>
+
+  <div *ngIf="!mistake">
+    <input class="p-m-2" #translation type="text" pInputText><br>
+    <button (click)="checkTranslation(translation.value); translation.value = ''" pButton pRipple type="button" label="Checken"
+            class="p-button-rounded p-button-success"></button>
+  </div>
+
+  <button *ngIf="mistake" (click)="updateWordpairAndLanguage()" pButton pRipple type="button" label="nächstes Wordpaar"
+          class="p-button-rounded p-button-warning"></button>
+</div>

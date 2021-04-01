@@ -1,0 +1,42 @@
+[
+  {
+    "uuid": "dc656c80-7216-4e9e-a116-ae063fe82905",
+    "primaryLanguage": "ja",
+    "secondaryLanguage": "是"
+  },
+  {
+    "uuid": "beece4d6-981b-4716-9ebd-14aad33d7c47",
+    "primaryLanguage": "nein",
+    "secondaryLanguage": "不"
+  },
+  {
+    "uuid": "2ef4d42f-2dc1-4bba-bc18-587e2be23f1c",
+    "primaryLanguage": "vielleicht",
+    "secondaryLanguage": "也许"
+  },
+  {
+    "uuid": "d976f386-59a4-488a-bbc9-cb464de08731",
+    "primaryLanguage": "bitte",
+    "secondaryLanguage": "请"
+  },
+  {
+    "uuid": "6404d85e-00cc-40af-9c5f-bd0c219fd61f",
+    "primaryLanguage": "danke",
+    "secondaryLanguage": "谢谢"
+  },
+  {
+    "uuid": "062b4d21-d546-447e-9be8-053f00930c7c",
+    "primaryLanguage": "entschuldigung",
+    "secondaryLanguage": "不好意思"
+  },
+  {
+    "uuid": "f13e4784-98de-4ad1-bab4-9b27bff0a10e",
+    "primaryLanguage": "alles klar",
+    "secondaryLanguage": "好的"
+  },
+  {
+    "uuid": "4b5f88e3-95c9-4129-b8ec-cac5be0de0a8",
+    "primaryLanguage": "Hilfe",
+    "secondaryLanguage": "\t救命啊"
+  }
+]

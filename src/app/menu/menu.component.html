@@ -1,0 +1,5 @@
+<div class="p-d-flex p-jc-center">
+  <button routerLink="/words"  pButton type="button" label="Erfassen" [disabled]="menuService.disableMenu"></button>
+  <button routerLink="/training" pButton type="button" label="Trainieren" class="p-button-success" [disabled]="menuService.disableMenu"></button>
+  <button routerLink="/exam" pButton type="button" label="Prüfung" class="p-button-warning" [disabled]="menuService.disableMenu"></button>
+</div>

@@ -1,0 +1,59 @@
+<p-table [value]="wordpairService.wordlist" sortField="primaryLanguage" editMode="row">
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="primaryLanguage" class="p-text-center">
+        {{wordpairService.languages['primaryLanguage']}}<p-sortIcon field="primaryLanguage"></p-sortIcon>
+      </th>
+      <th pSortableColumn="secondaryLanguage" class="p-text-center">
+        {{wordpairService.languages['secondaryLanguage']}}<p-sortIcon field="secondaryLanguage"></p-sortIcon>
+      </th>
+      <th class="p-text-center">Options</th>
+    </tr>
+    <tr>
+      <th class="p-text-center">
+        <input pInputText type="text" #newWordPrimaryInput>
+      </th>
+      <th class="p-text-center" >
+        <input pInputText type="text" #newWordSecondaryInput>
+      </th>
+      <th class="p-text-center">
+        <button (click)="addNewWordpair(newWordPrimaryInput, newWordSecondaryInput)" pButton pRipple type="button" icon="pi pi-plus"
+                                         class="p-button-rounded p-button-text p-button-success"></button></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-wordpair >
+    <tr [pEditableRow]="wordpair">
+      <td class="p-text-center" pEditableColumn>
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <input pInputText type="text" [(ngModel)]="wordpair.primaryLanguage" (change)="wordpairService.updateWordPairInList(wordpair)" required>
+          </ng-template>
+          <ng-template pTemplate="output">
+            {{wordpair.primaryLanguage}}
+          </ng-template>
+        </p-cellEditor>
+      </td>
+      <td class="p-text-center" pEditableColumn>
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <input pInputText type="text" [(ngModel)]="wordpair.secondaryLanguage" (change)="wordpairService.updateWordPairInList(wordpair)" required>
+          </ng-template>
+          <ng-template pTemplate="output">
+            {{wordpair.secondaryLanguage}}
+          </ng-template>
+        </p-cellEditor>
+      </td>
+      <td class="p-text-center">
+        <button (click)="wordpairService.deleteWordPairFromList(wordpair)" pButton pRipple type="button" pCancelEditableRow icon="pi pi-trash"
+                class="p-button-rounded p-button-text p-button-danger"></button>
+      </td>
+    </tr>
+  </ng-template>
+
+</p-table>
+<div class="button-bar-right">
+  <button (click)="wordpairService.emptyWordlist()" pButton type="button" label="Liste leeren"
+          class="p-button-danger p-m-1"></button>
+  <button (click)="wordpairService.loadExampleData()" pButton type="button" label="Lade Beispieldaten"
+          class="p-button p-m-1"></button>
+</div>

@@ -1,0 +1,26 @@
+<h2 class="p-mt-6">Prüfung</h2>
+<div class="p-m-4 p-text-center" *ngIf="wordpairService.wordlist.length === 0">
+  <p>Es sind Keine Wörter in der Liste vorhanden </p>
+</div>
+<div *ngIf="wordpairService.wordlist.length > 0">
+  <!-- This is  before exam start -->
+  <div *ngIf="waitingForStart">
+    <button (click)="startExam()" pButton pRipple type="button" label="Start"
+            class="p-button-rounded p-button-success"></button>
+  </div>
+  <!-- This is the active exam -->
+  <div *ngIf="!statisticShown && !waitingForStart">
+    <p>{{wordpairService.languages[knownLanguage]}}</p>
+    <h3>{{currentWordpair[knownLanguage]}}</h3>
+    <p>{{wordpairService.languages[wordpairService.getUnknownLanguage(knownLanguage)]}}</p>
+    <input #translation type="text" pInputText class="p-m-2"><br>
+    <button (click)="checkTranslation(translation.value)" pButton pRipple type="button" label="Checken"
+            class="p-button-rounded p-button-success"></button>
+  </div>
+  <!-- This is the statistic -->
+  <div *ngIf="statisticShown">
+    <p-chart type="pie" [data]="examResult"></p-chart>
+    <button (click)="resetExam()" pButton pRipple type="button" label="Reset Exam"
+            class="p-button-rounded p-button-success p-m-3"></button>
+  </div>
+</div>
