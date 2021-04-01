@@ -74,6 +74,7 @@ Erstelle eine Wortschatz-Trainer Applikation mit folgenden Funktionalitäten, we
 #### Weitere Gedanken
 Zur Verbesserung könnte man:
 - Eine Animation hinzufügen wenn im Training die Angabe korrekt war.
+- Configuration in environment.ts
 - Sprachauswahl der APP (i18n). 
 - Unit Tests mit Headless Chrome
 - Wortlisten in anderen Sprachen ermöglichen.
