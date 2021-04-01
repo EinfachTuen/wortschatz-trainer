@@ -34,9 +34,9 @@ Starte `ng test` oder `npm run test` zum ausführen der unit tests via [Karma](h
 ## Struktur
 Der Code ist in drei Kernkomponenten aufgeteilt:
 
-- wordlist.component `(Wortliste / Erfassen)`
-- training.component `(Training)`
-- exam.component `(Prüfung)`
+1. wordlist.component `(Wortliste / Erfassen)`
+2. training.component `(Training)`
+3. exam.component `(Prüfung)`
 
 
 - wordpair.service: `Übernimmt die Verwaltung der aktuellen Wortliste und speichert nach jedem Update die Liste im Browser Storage.`
